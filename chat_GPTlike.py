@@ -17,7 +17,7 @@ def generate_response(prompt):
     message=completion.choices[0].text
     return message
 
-st.title("SneuronAI ChatGPT-like Web App")
+st.title("SneuronAI ChatGPT-Sano Web App")
 
 #storing the chat
 if 'generated' not in st.session_state:
