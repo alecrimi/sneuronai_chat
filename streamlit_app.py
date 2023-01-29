@@ -2,10 +2,16 @@ import openai
 import streamlit as st
 from streamlit_chat import message
 import os 
-from dotenv import load_dotenv
-load_dotenv('api_key.env') #Get your key from OpenAI
 
+#Get your key from OpenAI for local machine not public
+'''
+from dotenv import load_dotenv
+load_dotenv('api_key.env')  
 openai.api_key = os.environ.get('API_KEY')
+'''
+ 
+# For Streamlit cloud assuming the key is in the "secret section"
+openai.api_key = os.getenv('API_KEY')
 def generate_response(prompt):
     completion=openai.Completion.create(
         engine='text-davinci-003',
